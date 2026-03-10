@@ -1,0 +1,40 @@
+{
+    "log_manager": {
+        "buffer_size": 100,
+        "thread_pool_size": 4
+    },
+    "sinks": {
+        "console": {
+            "enabled": true
+        },
+        "file": {
+            "enabled": true,
+            "path": "output/app.log"
+        },
+        "socket": {
+            "enabled": false,
+            "path": "/tmp/log.sock"
+        }
+    },
+    "sources": {
+        "cpu": {
+            "enabled": false,
+            "parse_rate_ms": 1000,
+            "path": "/tmp/cpu_telemetry.txt"
+        },
+        "gpu_someip": {
+            "enabled": true,
+            "parse_rate_ms": 2000
+        },
+        "ram": {
+            "enabled": false,
+            "parse_rate_ms": 1000,
+            "path": "/tmp/ram_telemetry.txt"
+        },
+        "socket": {
+            "enabled": false,
+            "parse_rate_ms": 500,
+            "path": "/tmp/telemetry.sock"
+        }
+    }
+}
